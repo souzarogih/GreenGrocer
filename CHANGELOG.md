@@ -16,3 +16,7 @@ Added
 [0.0.4] 2023-07-18
 Added
 #0004 | Criando tela principal de itens.
+
+[0.0.5] 2023-07-24
+Added
+#0004 | Criando tela de detalhes de produtos.

@@ -40,7 +40,7 @@ ItemModel mango = ItemModel(
   description:
       'A melhor Manga da região e que conta com o melhor preço de qualquer quitanda. Este item conta com vitaminas essenciais para o fortalecimento corporal, resultando em uma vida saudável.',
   imgUrl: 'assets/fruits/mango.png',
-  itemName: 'Kiwi',
+  itemName: 'Manga',
   price: 2.5,
   unit: 'un',
 );
