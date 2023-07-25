@@ -176,4 +176,36 @@ List<OrderModel> orders = [
       ),
     ],
   ),
+
+  //Pedido 3
+  OrderModel(
+    copyAndPaste: 'q1w2e3r4t5C5',
+    createdDateTime: DateTime.parse(
+      '2023-07-25 09:22:12.095',
+    ),
+    overdueDateTime: DateTime.parse(
+      '2023-07-26 12:10:21.120',
+    ),
+    id: 'asd6a54da6s2CD',
+    status: 'pending_payment',
+    total: 101.0,
+    items: [
+      CartItemModel(
+        item: apple,
+        quantity: 3,
+      ),
+      CartItemModel(
+        item: mango,
+        quantity: 4,
+      ),
+      CartItemModel(
+        item: grape,
+        quantity: 1,
+      ),
+      CartItemModel(
+        item: kiwi,
+        quantity: 8,
+      ),
+    ],
+  ),
 ];
