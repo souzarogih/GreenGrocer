@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/pages/auth/components/custon_text_field.dart';
+import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 

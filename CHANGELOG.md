@@ -24,3 +24,7 @@ Added
 [0.0.6] 2023-07-24
 Added
 #0006 | Criando tela do carrinho de compras.
+
+[0.0.7] 2023-07-25
+Added
+#0007 | Criando tela do perfil do usuário.
