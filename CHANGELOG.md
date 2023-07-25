@@ -28,3 +28,7 @@ Added
 [0.0.7] 2023-07-25
 Added
 #0007 | Criando tela do perfil do usuário.
+
+[0.0.8] 2023-07-25
+Added
+#0008 | Fianlizando a criação da tela do perfil do usuário.
