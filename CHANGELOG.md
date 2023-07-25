@@ -19,4 +19,8 @@ Added
 
 [0.0.5] 2023-07-24
 Added
-#0004 | Criando tela de detalhes de produtos.
+#0005 | Criando tela de detalhes de produtos.
+
+[0.0.6] 2023-07-24
+Added
+#0006 | Criando tela do carrinho de compras.
