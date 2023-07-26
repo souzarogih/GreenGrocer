@@ -19,6 +19,10 @@ class _CartTabState extends State<CartTab> {
   void removeItemFromCart(CartItemModel cartItem) {
     setState(() {
       appData.cartItems.remove(cartItem);
+      utilsServices.showToast(
+        message: "${cartItem.item.itemName} removido(a) do carrinho",
+        isError: false,
+      );
     });
   }
 
@@ -40,6 +44,7 @@ class _CartTabState extends State<CartTab> {
       ),
       body: Column(
         children: [
+          // Lista de itens do carrinho
           Expanded(
             child: ListView.builder(
               itemCount: appData.cartItems.length,
@@ -102,6 +107,11 @@ class _CartTabState extends State<CartTab> {
                               order: appData.orders.first,
                             );
                           },
+                        );
+                      } else {
+                        utilsServices.showToast(
+                          message: 'Pedido não confirmado',
+                          isError: true,
                         );
                       }
                     },
