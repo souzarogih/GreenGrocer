@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
 import 'package:greengrocer/src/config/app_data.dart' as appData;
+import 'package:greengrocer/src/services/utils.services.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -10,6 +11,7 @@ class ProfileTab extends StatefulWidget {
 }
 
 class _ProfileTabState extends State<ProfileTab> {
+  final UtilsServices utilsServices = UtilsServices();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,7 +144,11 @@ class _ProfileTabState extends State<ProfileTab> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          utilsServices.showToast(
+                            message: 'Senha atualizada com sucesso',
+                          );
+                        },
                         child: const Text('Atualizar'),
                       ),
                     ),
