@@ -32,3 +32,7 @@ Added
 [0.0.8] 2023-07-25
 Added
 #0008 | Fianlizando a criação da tela do perfil do usuário.
+
+[0.0.9] 2023-07-27
+Added
+#0009 | Adicionando o carregamento de itens da tela com shimmer
