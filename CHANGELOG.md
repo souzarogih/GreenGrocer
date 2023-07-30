@@ -36,3 +36,7 @@ Added
 [0.0.9] 2023-07-27
 Added
 #0009 | Adicionando o carregamento de itens da tela com shimmer
+
+[0.0.10] 2023-07-30
+Added
+#0010 | Adicionando navegação de telas com Get na splash, sigIn, sigUp e Home

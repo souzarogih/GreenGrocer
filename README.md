@@ -17,6 +17,8 @@
 
 `flutter pub run flutter_launcher_icons`
 
+flutter clean
+flutter pub get
 ## Getting Started
 
 This project is a starting point for a Flutter application.
