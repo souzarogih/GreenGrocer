@@ -40,3 +40,7 @@ Added
 [0.0.10] 2023-07-30
 Added
 #0010 | Adicionando navegação de telas com Get na splash, sigIn, sigUp e Home
+
+[0.0.11] 2023-07-31
+Added
+#0011 | Implementação do CircularProgressIndicator enquanto está logando e usando o FocusScope para desabilitar o botão.

@@ -17,6 +17,10 @@
 
 `flutter pub run flutter_launcher_icons`
 
+#### Quando precisamos todar o app zerado
+`flutter clean`
+`flutter pub get`
+
 flutter clean
 flutter pub get
 ## Getting Started

@@ -8,6 +8,8 @@ class CustonTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final String? initialValue;
   final bool readOnly;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const CustonTextField({
     super.key,
@@ -17,6 +19,8 @@ class CustonTextField extends StatefulWidget {
     this.inputFormatters,
     this.initialValue,
     this.readOnly = false,
+    this.validator,
+    this.controller,
   });
 
   @override
@@ -28,7 +32,6 @@ class _CustonTextFieldState extends State<CustonTextField> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     isObscure = widget.isSecret;
@@ -39,10 +42,12 @@ class _CustonTextFieldState extends State<CustonTextField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        controller: widget.controller,
         readOnly: widget.readOnly,
         initialValue: widget.initialValue,
         inputFormatters: widget.inputFormatters,
         obscureText: isObscure,
+        validator: widget.validator,
         decoration: InputDecoration(
           prefixIcon: Icon(widget.icon),
           suffixIcon: widget.isSecret
