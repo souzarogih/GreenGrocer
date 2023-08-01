@@ -48,3 +48,7 @@ Added
 [0.0.12] 2023-07-31
 Added
 #0012 | Implementação da classe que faz o gerenciamento das requisições http.
+
+[0.0.13] 2023-07-31
+Added
+#0013 | Implementação da integração do signin com o backend via http/rest.
