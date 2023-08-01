@@ -44,3 +44,7 @@ Added
 [0.0.11] 2023-07-31
 Added
 #0011 | Implementação do CircularProgressIndicator enquanto está logando e usando o FocusScope para desabilitar o botão.
+
+[0.0.12] 2023-07-31
+Added
+#0012 | Implementação da classe que faz o gerenciamento das requisições http.
