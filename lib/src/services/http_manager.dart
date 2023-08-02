@@ -44,7 +44,7 @@ class HttpManager {
       return response.data;
 
       // Refatorar o DioError
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       // Retorno do erro do dio request.
       return error.response?.data ?? {};
     } catch (error) {

@@ -23,6 +23,13 @@
 
 flutter clean
 flutter pub get
+
+#### Gerar código build runner
+`flutter pub run build_runner build`
+
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

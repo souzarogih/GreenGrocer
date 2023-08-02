@@ -52,3 +52,7 @@ Added
 [0.0.13] 2023-07-31
 Added
 #0013 | Implementação da integração do signin com o backend via http/rest.
+
+[0.0.14] 2023-08-02
+Added
+#0014 | Implementação o auth errors e auth_repository
