@@ -28,6 +28,10 @@ flutter pub get
 `flutter pub run build_runner build`
 
 
+#### Limpar os dados gerados dos apps
+`$ flutter clean`
+
+
 
 
 ## Getting Started

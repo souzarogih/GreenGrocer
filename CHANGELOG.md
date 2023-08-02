@@ -56,3 +56,7 @@ Added
 [0.0.14] 2023-08-02
 Added
 #0014 | Implementação o auth errors e auth_repository
+
+[0.0.15] 2023-08-02
+Added
+#0015 | Armazenando o token de login localmente e fazendo o direcionamento pelo AuthController.

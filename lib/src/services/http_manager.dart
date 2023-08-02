@@ -42,8 +42,6 @@ class HttpManager {
 
       // Retorno do resultado do backend.
       return response.data;
-
-      // Refatorar o DioError
     } on DioException catch (error) {
       // Retorno do erro do dio request.
       return error.response?.data ?? {};
