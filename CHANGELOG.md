@@ -65,10 +65,13 @@ Added
 Added
 #0016 | Adicionando validação dos campos de texto do sigUp.
 
-
 [0.0.17] 2023-08-04
 Added
 #0017 | Enviando requisição para cadastro de usuário.
 #0018 | Adicionando logs para debug.
 #0019 | Definindo ação para o botao de signOut na tela de perfil.
 #0020 | Desabilitando o teclado quando pressionar o botão de cadastrar um usuário.
+
+[0.0.18] 2023-08-04
+Added
+#0021 | Criando dialog para botão de esqueci minha senha.

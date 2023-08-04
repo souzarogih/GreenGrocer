@@ -2,10 +2,12 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
+import 'package:greengrocer/src/pages/auth/view/components/forgot_password_dialog.dart';
 import 'package:greengrocer/src/pages/common_widgets/app_name_widget.dart';
-import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
+import 'package:greengrocer/src/pages/common_widgets/custom_text_field.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/pages_routes/app_pages.dart';
+import 'package:greengrocer/src/services/utils.services.dart';
 
 import '../../../services/validators.dart';
 import 'dart:developer' as dev;
@@ -18,6 +20,7 @@ class SignInScreen extends StatelessWidget {
   // Controlador de campos
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final utilsServices = UtilsServices();
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +88,7 @@ class SignInScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         //Email
-                        CustonTextField(
+                        CustomTextField(
                           controller: emailController,
                           icon: Icons.email,
                           label: 'Email',
@@ -93,7 +96,7 @@ class SignInScreen extends StatelessWidget {
                         ),
 
                         //senha
-                        CustonTextField(
+                        CustomTextField(
                           controller: passwordController,
                           icon: Icons.lock,
                           label: 'Senha',
@@ -145,7 +148,22 @@ class SignInScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              final bool? result = await showDialog(
+                                context: context,
+                                builder: (_) {
+                                  return ForgotPasswordDialog(
+                                    email: emailController.text,
+                                  );
+                                },
+                              );
+
+                              if (result ?? false) {
+                                utilsServices.showToast(
+                                    message:
+                                        'Um link de recuperação foi enviado para seu e-mail.');
+                              }
+                            },
                             child: Text(
                               'Esqueceu a senha?',
                               style: TextStyle(

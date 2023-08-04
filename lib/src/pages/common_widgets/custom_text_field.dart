@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CustonTextField extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   final IconData icon;
   final String label;
   final bool isSecret;
@@ -12,8 +12,9 @@ class CustonTextField extends StatefulWidget {
   final void Function(String?)? onSaved;
   final TextEditingController? controller;
   final TextInputType? textInputType;
+  final GlobalKey<FormFieldState>? formFielKey;
 
-  const CustonTextField({
+  const CustomTextField({
     super.key,
     required this.icon,
     required this.label,
@@ -25,13 +26,14 @@ class CustonTextField extends StatefulWidget {
     this.onSaved,
     this.controller,
     this.textInputType,
+    this.formFielKey,
   });
 
   @override
-  State<CustonTextField> createState() => _CustonTextFieldState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _CustonTextFieldState extends State<CustonTextField> {
+class _CustomTextFieldState extends State<CustomTextField> {
   bool isObscure = false;
 
   @override
@@ -46,6 +48,7 @@ class _CustonTextFieldState extends State<CustonTextField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        key: widget.formFielKey,
         controller: widget.controller,
         readOnly: widget.readOnly,
         initialValue: widget.initialValue,

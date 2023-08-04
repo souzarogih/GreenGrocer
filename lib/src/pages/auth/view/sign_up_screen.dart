@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
 
-import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
+import 'package:greengrocer/src/pages/common_widgets/custom_text_field.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/services/validators.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -65,7 +65,7 @@ class SignUpScrenn extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          CustonTextField(
+                          CustomTextField(
                             icon: Icons.email,
                             label: 'Email',
                             onSaved: (value) {
@@ -74,7 +74,7 @@ class SignUpScrenn extends StatelessWidget {
                             validator: emailValidator,
                             textInputType: TextInputType.emailAddress,
                           ),
-                          CustonTextField(
+                          CustomTextField(
                             icon: Icons.lock,
                             label: 'Senha',
                             onSaved: (value) {
@@ -83,7 +83,7 @@ class SignUpScrenn extends StatelessWidget {
                             validator: passwordValidator,
                             isSecret: true,
                           ),
-                          CustonTextField(
+                          CustomTextField(
                             icon: Icons.person,
                             label: 'Nome',
                             onSaved: (value) {
@@ -91,7 +91,7 @@ class SignUpScrenn extends StatelessWidget {
                             },
                             validator: nameValidator,
                           ),
-                          CustonTextField(
+                          CustomTextField(
                             icon: Icons.phone,
                             label: 'Celular',
                             onSaved: (value) {
@@ -101,7 +101,7 @@ class SignUpScrenn extends StatelessWidget {
                             validator: phoneValidator,
                             inputFormatters: [phoneFormatter],
                           ),
-                          CustonTextField(
+                          CustomTextField(
                             icon: Icons.file_copy,
                             label: 'CPF',
                             onSaved: (value) {

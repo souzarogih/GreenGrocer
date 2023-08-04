@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
-import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
+import 'package:greengrocer/src/pages/common_widgets/custom_text_field.dart';
 import 'package:greengrocer/src/config/app_data.dart' as appData;
 import 'package:greengrocer/src/services/utils.services.dart';
 
@@ -36,7 +36,7 @@ class _ProfileTabState extends State<ProfileTab> {
         padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
         children: [
           //Email
-          CustonTextField(
+          CustomTextField(
             readOnly: true,
             initialValue: appData.user.email,
             icon: Icons.email,
@@ -44,7 +44,7 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
 
           //Nome
-          CustonTextField(
+          CustomTextField(
             readOnly: true,
             initialValue: appData.user.name,
             icon: Icons.person,
@@ -52,7 +52,7 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
 
           //Celular
-          CustonTextField(
+          CustomTextField(
             readOnly: true,
             initialValue: appData.user.phone,
             icon: Icons.phone,
@@ -60,7 +60,7 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
 
           //cpf
-          CustonTextField(
+          CustomTextField(
             readOnly: true,
             initialValue: appData.user.cpf,
             icon: Icons.file_copy,
@@ -122,19 +122,19 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                     ),
                     // Senha atual
-                    const CustonTextField(
+                    const CustomTextField(
                       isSecret: true,
                       icon: Icons.lock,
                       label: 'Senha atual',
                     ),
                     // Nova Senha
-                    const CustonTextField(
+                    const CustomTextField(
                       isSecret: true,
                       icon: Icons.lock_outline,
                       label: 'Nova senha',
                     ),
                     // Confirmação nova senha
-                    const CustonTextField(
+                    const CustomTextField(
                       isSecret: true,
                       icon: Icons.lock_outline,
                       label: 'Confirmar nova senha',
