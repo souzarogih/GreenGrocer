@@ -60,3 +60,7 @@ Added
 [0.0.15] 2023-08-02
 Added
 #0015 | Armazenando o token de login localmente e fazendo o direcionamento pelo AuthController.
+
+[0.0.16] 2023-08-03
+Added
+#0016 | Adicionando validação dos campos de texto do sigUp.
