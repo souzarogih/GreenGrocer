@@ -5,6 +5,7 @@ import 'package:greengrocer/src/pages/auth/repository/auth_repository.dart';
 import 'package:greengrocer/src/pages/auth/result/auth_result.dart';
 import 'package:greengrocer/src/pages_routes/app_pages.dart';
 import 'package:greengrocer/src/services/utils.services.dart';
+import 'dart:developer' as dev;
 
 class AuthController extends GetxController {
   RxBool isLoading = false.obs;
@@ -26,6 +27,7 @@ class AuthController extends GetxController {
     String? token = await utilsService.getLocalData(key: StorageKeys.token);
 
     if (token == null) {
+      dev.log('Fazendo o roteamento para login');
       Get.offAllNamed(PagesRoutes.sigInRoute);
       return;
     }
@@ -37,7 +39,7 @@ class AuthController extends GetxController {
         saveTokenAndProceedToBase();
       },
       error: (message) {
-        print('Token inválido');
+        dev.log('Token inválido');
         signOut();
       },
     );
@@ -57,9 +59,30 @@ class AuthController extends GetxController {
   void saveTokenAndProceedToBase() {
     //Salvar o token
     utilsService.saveLocalData(key: StorageKeys.token, data: user.token!);
+    dev.log('Token do usuário salvo localmente.');
+    dev.log('Redirecionando para tela principal.');
 
     //Ir para tela base
     Get.offAllNamed(PagesRoutes.baseRoute);
+  }
+
+  Future<void> signUp() async {
+    dev.log('Enviando requisição de cadastro de usuário.');
+    isLoading.value = true;
+
+    AuthResult result = await authRepository.signUp(user);
+
+    isLoading.value = false;
+
+    result.when(
+      success: (user) {
+        this.user = user;
+        saveTokenAndProceedToBase();
+      },
+      error: (message) {
+        utilsService.showToast(message: message, isError: true);
+      },
+    );
   }
 
   Future<void> signIn({

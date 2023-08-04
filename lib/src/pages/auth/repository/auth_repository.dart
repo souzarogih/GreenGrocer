@@ -4,9 +4,23 @@ import 'package:greengrocer/src/pages/auth/repository/auth_errors.dart'
     as authErrors;
 import 'package:greengrocer/src/pages/auth/result/auth_result.dart';
 import 'package:greengrocer/src/services/http_manager.dart';
+import 'dart:developer' as dev;
 
 class AuthRepository {
   final HttpManager _httpManager = HttpManager();
+
+  AuthResult handleUserOrError(Map<dynamic, dynamic> result) {
+    if (result['result'] != null) {
+      dev.log(
+          'Autenticação realizada com sucesso ${result['result']['id']} | ${result['result']['fullname']} | ${result['result']['email']}');
+      // print(result['result']);
+      final user = UserModel.fromJson(result['result']);
+      return AuthResult.success(user);
+    } else {
+      dev.log('Ocorreu um erro na autenticação!');
+      return AuthResult.error(authErrors.authErrorsString(result['error']));
+    }
+  }
 
   Future<AuthResult> validateToken(String token) async {
     final result = await _httpManager.restRequest(
@@ -16,13 +30,7 @@ class AuthRepository {
           'X-Parse-Session-Token': token,
         });
 
-    if (result['result'] != null) {
-      final user = UserModel.fromJson(result['result']);
-      return AuthResult.success(user);
-    } else {
-      print('GG - Ocorre um erro na validação do token do usuário.');
-      return AuthResult.error(authErrors.authErrorsString(result['error']));
-    }
+    return handleUserOrError(result);
   }
 
   Future<AuthResult> signIn(
@@ -36,14 +44,16 @@ class AuthRepository {
       },
     );
 
-    if (result['result'] != null) {
-      print('Signin funcionou!');
-      // print(result['result']);
-      final user = UserModel.fromJson(result['result']);
-      return AuthResult.success(user);
-    } else {
-      print('Ocorreu um erro na autenticação!');
-      return AuthResult.error(authErrors.authErrorsString(result['error']));
-    }
+    return handleUserOrError(result);
+  }
+
+  Future<AuthResult> signUp(UserModel user) async {
+    final result = await _httpManager.restRequest(
+      url: Endpoints.signup,
+      method: HttpMethods.post,
+      body: user.toJson(),
+    );
+
+    return handleUserOrError(result);
   }
 }

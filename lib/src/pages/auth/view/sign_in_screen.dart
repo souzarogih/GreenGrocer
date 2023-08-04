@@ -8,6 +8,7 @@ import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/pages_routes/app_pages.dart';
 
 import '../../../services/validators.dart';
+import 'dart:developer' as dev;
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
@@ -120,15 +121,14 @@ class SignInScreen extends StatelessWidget {
                                         FocusScope.of(context).unfocus();
 
                                         if (_formKey.currentState!.validate()) {
-                                          print('GG - Login do e-mail $email');
+                                          dev.log(
+                                              'GG - Login do e-mail $email');
                                           authController.signIn(
                                               email: email, password: password);
                                         } else {
-                                          print(
-                                              'Email: $email - Senha: $password');
-                                          print('Campos não válidos!');
+                                          dev.log(
+                                              'Campos de email e/ou senha não válidos');
                                         }
-                                        // Get.offNamed(PagesRoutes.baseRoute);
                                       },
                                 child: authController.isLoading.value
                                     ? const CircularProgressIndicator()
