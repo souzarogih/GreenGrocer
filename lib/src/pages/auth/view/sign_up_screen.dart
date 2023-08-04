@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'package:greengrocer/src/pages/common_widgets/custon_text_field.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/services/validators.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpScrenn extends StatelessWidget {
@@ -17,6 +17,8 @@ class SignUpScrenn extends StatelessWidget {
     mask: '## # ####-####',
     filter: {'#': RegExp(r'[0-9]')},
   );
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -54,50 +56,61 @@ class SignUpScrenn extends StatelessWidget {
                         top: Radius.circular(45),
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const CustonTextField(
-                          icon: Icons.email,
-                          label: 'Email',
-                        ),
-                        const CustonTextField(
-                          icon: Icons.lock,
-                          label: 'Senha',
-                          isSecret: true,
-                        ),
-                        const CustonTextField(
-                          icon: Icons.person,
-                          label: 'Nome',
-                        ),
-                        CustonTextField(
-                          icon: Icons.phone,
-                          label: 'Celular',
-                          inputFormatters: [phoneFormatter],
-                        ),
-                        CustonTextField(
-                          icon: Icons.file_copy,
-                          label: 'CPF',
-                          inputFormatters: [cpfFormatter],
-                        ),
-                        SizedBox(
-                          height: 50,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                            ),
-                            onPressed: () {},
-                            child: const Text(
-                              'Cadastrar usuário',
-                              style: TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const CustonTextField(
+                            icon: Icons.email,
+                            label: 'Email',
+                            validator: emailValidator,
+                            textInputType: TextInputType.emailAddress,
                           ),
-                        )
-                      ],
+                          const CustonTextField(
+                            icon: Icons.lock,
+                            label: 'Senha',
+                            validator: passwordValidator,
+                            isSecret: true,
+                          ),
+                          const CustonTextField(
+                            icon: Icons.person,
+                            label: 'Nome',
+                            validator: nameValidator,
+                          ),
+                          CustonTextField(
+                            icon: Icons.phone,
+                            label: 'Celular',
+                            textInputType: TextInputType.phone,
+                            validator: phoneValidator,
+                            inputFormatters: [phoneFormatter],
+                          ),
+                          CustonTextField(
+                            icon: Icons.file_copy,
+                            label: 'CPF',
+                            textInputType: TextInputType.number,
+                            validator: cpfValidator,
+                            inputFormatters: [cpfFormatter],
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: const Text(
+                                'Cadastrar usuário',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
