@@ -25,7 +25,9 @@ flutter clean
 flutter pub get
 
 #### Gerar código build runner
-`flutter pub run build_runner build`
+`$ flutter pub run build_runner build`
+ou
+`$ flutter pub run build_runner watch`
 
 
 #### Limpar os dados gerados dos apps
