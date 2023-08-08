@@ -75,3 +75,7 @@ Added
 [0.0.18] 2023-08-04
 Added
 #0021 | Criando dialog para botão de esqueci minha senha.
+
+[0.0.19] 2023-08-08
+Added
+#0022 | Carregando produtos de forma dinâmica.
