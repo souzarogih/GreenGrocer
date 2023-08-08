@@ -79,3 +79,7 @@ Added
 [0.0.19] 2023-08-08
 Added
 #0022 | Carregando produtos de forma dinâmica.
+
+[0.0.20] 2023-08-08
+Added
+#0023 | Recuperando todos os produtos ao fazer scroll inifinito.
