@@ -87,3 +87,7 @@ Added
 [0.0.21] 2023-08-09
 Added
 #0024 | Correção na exibição dos produtos.
+
+[0.0.22] 2023-08-09
+Added
+#0025 | Navegação para tela do carrinho quando pressionar o botão de adicionar ao carrinho.
