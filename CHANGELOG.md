@@ -83,3 +83,7 @@ Added
 [0.0.20] 2023-08-08
 Added
 #0023 | Recuperando todos os produtos ao fazer scroll inifinito.
+
+[0.0.21] 2023-08-09
+Added
+#0024 | Correção na exibição dos produtos.
