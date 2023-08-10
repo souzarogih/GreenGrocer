@@ -75,30 +75,30 @@ List<String> categories = [
 ];
 
 List<CartItemModel> cartItems = [
-  CartItemModel(
-    item: apple,
-    quantity: 2,
-  ),
-  CartItemModel(
-    item: mango,
-    quantity: 1,
-  ),
-  CartItemModel(
-    item: guava,
-    quantity: 3,
-  ),
-  CartItemModel(
-    item: grape,
-    quantity: 4,
-  ),
-  CartItemModel(
-    item: kiwi,
-    quantity: 1,
-  ),
-  CartItemModel(
-    item: papaya,
-    quantity: 7,
-  ),
+  // CartItemModel(
+  //   item: apple,
+  //   quantity: 2,
+  // ),
+  // CartItemModel(
+  //   item: mango,
+  //   quantity: 1,
+  // ),
+  // CartItemModel(
+  //   item: guava,
+  //   quantity: 3,
+  // ),
+  // CartItemModel(
+  //   item: grape,
+  //   quantity: 4,
+  // ),
+  // CartItemModel(
+  //   item: kiwi,
+  //   quantity: 1,
+  // ),
+  // CartItemModel(
+  //   item: papaya,
+  //   quantity: 7,
+  // ),
 ];
 
 UserModel user = UserModel(
@@ -123,18 +123,18 @@ List<OrderModel> orders = [
     status: 'pending_payment',
     total: 11.0,
     items: [
-      CartItemModel(
-        item: apple,
-        quantity: 2,
-      ),
-      CartItemModel(
-        item: mango,
-        quantity: 3,
-      ),
-      CartItemModel(
-        item: papaya,
-        quantity: 1,
-      ),
+      // CartItemModel(
+      //   item: apple,
+      //   quantity: 2,
+      // ),
+      // CartItemModel(
+      //   item: mango,
+      //   quantity: 3,
+      // ),
+      // CartItemModel(
+      //   item: papaya,
+      //   quantity: 1,
+      // ),
     ],
   ),
   //Pedido 2
@@ -150,30 +150,30 @@ List<OrderModel> orders = [
     status: 'refounded',
     total: 11.0,
     items: [
-      CartItemModel(
-        item: apple,
-        quantity: 3,
-      ),
-      CartItemModel(
-        item: mango,
-        quantity: 4,
-      ),
-      CartItemModel(
-        item: grape,
-        quantity: 1,
-      ),
-      CartItemModel(
-        item: kiwi,
-        quantity: 8,
-      ),
-      CartItemModel(
-        item: guava,
-        quantity: 1,
-      ),
-      CartItemModel(
-        item: papaya,
-        quantity: 8,
-      ),
+      // CartItemModel(
+      //   item: apple,
+      //   quantity: 3,
+      // ),
+      // CartItemModel(
+      //   item: mango,
+      //   quantity: 4,
+      // ),
+      // CartItemModel(
+      //   item: grape,
+      //   quantity: 1,
+      // ),
+      // CartItemModel(
+      //   item: kiwi,
+      //   quantity: 8,
+      // ),
+      // CartItemModel(
+      //   item: guava,
+      //   quantity: 1,
+      // ),
+      // CartItemModel(
+      //   item: papaya,
+      //   quantity: 8,
+      // ),
     ],
   ),
 
@@ -190,22 +190,22 @@ List<OrderModel> orders = [
     status: 'pending_payment',
     total: 101.0,
     items: [
-      CartItemModel(
-        item: apple,
-        quantity: 3,
-      ),
-      CartItemModel(
-        item: mango,
-        quantity: 4,
-      ),
-      CartItemModel(
-        item: grape,
-        quantity: 1,
-      ),
-      CartItemModel(
-        item: kiwi,
-        quantity: 8,
-      ),
+      // CartItemModel(
+      //   item: apple,
+      //   quantity: 3,
+      // ),
+      // CartItemModel(
+      //   item: mango,
+      //   quantity: 4,
+      // ),
+      // CartItemModel(
+      //   item: grape,
+      //   quantity: 1,
+      // ),
+      // CartItemModel(
+      //   item: kiwi,
+      //   quantity: 8,
+      // ),
     ],
   ),
 ];
