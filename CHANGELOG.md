@@ -91,3 +91,8 @@ Added
 [0.0.22] 2023-08-09
 Added
 #0025 | Navegação para tela do carrinho quando pressionar o botão de adicionar ao carrinho.
+
+[0.0.23] 2023-08-11
+Added
+#0026 | Exibindo mensagem de carrinho vazio quando não há itens.
+#0027 | Navegando o botão de carrinho para tela de carrinho.

@@ -124,4 +124,10 @@ class CartController extends GetxController {
 
     update();
   }
+
+  int getCartTotalItems() {
+    return cartItems.isEmpty
+        ? 0
+        : cartItems.map((e) => e.quantity).reduce((a, b) => a + b);
+  }
 }
