@@ -111,101 +111,101 @@ UserModel user = UserModel(
 
 List<OrderModel> orders = [
   //Pedido 1
-  OrderModel(
-    copyAndPaste: 'q1w2e3r4t5y6',
-    createdDateTime: DateTime.parse(
-      '2023-07-25 09:12:01.305',
-    ),
-    overdueDateTime: DateTime.parse(
-      '2023-07-25 11:02:10.305',
-    ),
-    id: 'asd6a54da6s2d1',
-    status: 'pending_payment',
-    total: 11.0,
-    items: [
-      // CartItemModel(
-      //   item: apple,
-      //   quantity: 2,
-      // ),
-      // CartItemModel(
-      //   item: mango,
-      //   quantity: 3,
-      // ),
-      // CartItemModel(
-      //   item: papaya,
-      //   quantity: 1,
-      // ),
-    ],
-  ),
-  //Pedido 2
-  OrderModel(
-    copyAndPaste: 'q1w2e3r4t5b3',
-    createdDateTime: DateTime.parse(
-      '2023-07-24 21:12:10.205',
-    ),
-    overdueDateTime: DateTime.parse(
-      '2023-07-26 12:02:10.401',
-    ),
-    id: 'asd6a54da6s2fh',
-    status: 'refounded',
-    total: 11.0,
-    items: [
-      // CartItemModel(
-      //   item: apple,
-      //   quantity: 3,
-      // ),
-      // CartItemModel(
-      //   item: mango,
-      //   quantity: 4,
-      // ),
-      // CartItemModel(
-      //   item: grape,
-      //   quantity: 1,
-      // ),
-      // CartItemModel(
-      //   item: kiwi,
-      //   quantity: 8,
-      // ),
-      // CartItemModel(
-      //   item: guava,
-      //   quantity: 1,
-      // ),
-      // CartItemModel(
-      //   item: papaya,
-      //   quantity: 8,
-      // ),
-    ],
-  ),
+  // OrderModel(
+  //   copyAndPaste: 'q1w2e3r4t5y6',
+  //   createdDateTime: DateTime.parse(
+  //     '2023-07-25 09:12:01.305',
+  //   ),
+  //   overdueDateTime: DateTime.parse(
+  //     '2023-07-25 11:02:10.305',
+  //   ),
+  //   id: 'asd6a54da6s2d1',
+  //   status: 'pending_payment',
+  //   total: 11.0,
+  //   items: [
+  //     // CartItemModel(
+  //     //   item: apple,
+  //     //   quantity: 2,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: mango,
+  //     //   quantity: 3,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: papaya,
+  //     //   quantity: 1,
+  //     // ),
+  //   ],
+  // ),
+  // //Pedido 2
+  // OrderModel(
+  //   copyAndPaste: 'q1w2e3r4t5b3',
+  //   createdDateTime: DateTime.parse(
+  //     '2023-07-24 21:12:10.205',
+  //   ),
+  //   overdueDateTime: DateTime.parse(
+  //     '2023-07-26 12:02:10.401',
+  //   ),
+  //   id: 'asd6a54da6s2fh',
+  //   status: 'refounded',
+  //   total: 11.0,
+  //   items: [
+  //     // CartItemModel(
+  //     //   item: apple,
+  //     //   quantity: 3,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: mango,
+  //     //   quantity: 4,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: grape,
+  //     //   quantity: 1,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: kiwi,
+  //     //   quantity: 8,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: guava,
+  //     //   quantity: 1,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: papaya,
+  //     //   quantity: 8,
+  //     // ),
+  //   ],
+  // ),
 
-  //Pedido 3
-  OrderModel(
-    copyAndPaste: 'q1w2e3r4t5C5',
-    createdDateTime: DateTime.parse(
-      '2023-07-25 09:22:12.095',
-    ),
-    overdueDateTime: DateTime.parse(
-      '2023-07-26 12:10:21.120',
-    ),
-    id: 'asd6a54da6s2CD',
-    status: 'pending_payment',
-    total: 101.0,
-    items: [
-      // CartItemModel(
-      //   item: apple,
-      //   quantity: 3,
-      // ),
-      // CartItemModel(
-      //   item: mango,
-      //   quantity: 4,
-      // ),
-      // CartItemModel(
-      //   item: grape,
-      //   quantity: 1,
-      // ),
-      // CartItemModel(
-      //   item: kiwi,
-      //   quantity: 8,
-      // ),
-    ],
-  ),
+  // //Pedido 3
+  // OrderModel(
+  //   copyAndPaste: 'q1w2e3r4t5C5',
+  //   createdDateTime: DateTime.parse(
+  //     '2023-07-25 09:22:12.095',
+  //   ),
+  //   overdueDateTime: DateTime.parse(
+  //     '2023-07-26 12:10:21.120',
+  //   ),
+  //   id: 'asd6a54da6s2CD',
+  //   status: 'pending_payment',
+  //   total: 101.0,
+  //   items: [
+  //     // CartItemModel(
+  //     //   item: apple,
+  //     //   quantity: 3,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: mango,
+  //     //   quantity: 4,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: grape,
+  //     //   quantity: 1,
+  //     // ),
+  //     // CartItemModel(
+  //     //   item: kiwi,
+  //     //   quantity: 8,
+  //     // ),
+  //   ],
+  // ),
 ];
