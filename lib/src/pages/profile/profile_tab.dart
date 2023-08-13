@@ -93,9 +93,9 @@ class _ProfileTabState extends State<ProfileTab> {
   }
 
   Future<bool?> updatePassword() {
+    final currentPasswordController = TextEditingController();
     final newPasswordController = TextEditingController();
 
-    // final formKey = GlobalKey<FormState>();
     final formKey = GlobalKey<FormState>();
 
     return showDialog(
@@ -130,7 +130,8 @@ class _ProfileTabState extends State<ProfileTab> {
                         ),
                       ),
                       // Senha atual
-                      const CustomTextField(
+                      CustomTextField(
+                        controller: currentPasswordController,
                         isSecret: true,
                         icon: Icons.lock,
                         label: 'Senha atual',
@@ -166,20 +167,31 @@ class _ProfileTabState extends State<ProfileTab> {
                       // Botão de confirmação
                       SizedBox(
                         height: 45,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                        child: Obx(
+                          () => ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                             ),
+                            onPressed: authController.isLoading.value
+                                ? null
+                                : () {
+                                    if (formKey.currentState!.validate()) {
+                                      authController.changePassword(
+                                        currentPassword:
+                                            currentPasswordController.text,
+                                        newPassword: newPasswordController.text,
+                                      );
+                                    }
+                                    // utilsServices.showToast(
+                                    //   message: 'Senha atualizada com sucesso',
+                                    // );
+                                  },
+                            child: authController.isLoading.value
+                                ? const CircularProgressIndicator()
+                                : const Text('Atualizar'),
                           ),
-                          onPressed: () {
-                            // formKey.currentState!.validate();
-                            formKey.currentState!.validate();
-                            // utilsServices.showToast(
-                            //   message: 'Senha atualizada com sucesso',
-                            // );
-                          },
-                          child: const Text('Atualizar'),
                         ),
                       ),
                     ],
