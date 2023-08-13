@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
 import 'package:greengrocer/src/pages/common_widgets/custom_text_field.dart';
-import 'package:greengrocer/src/config/app_data.dart' as appData;
 import 'package:greengrocer/src/services/utils.services.dart';
+import 'package:greengrocer/src/services/validators.dart';
+import 'dart:developer' as dev;
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -38,7 +39,7 @@ class _ProfileTabState extends State<ProfileTab> {
           //Email
           CustomTextField(
             readOnly: true,
-            initialValue: appData.user.email,
+            initialValue: authController.user.email,
             icon: Icons.email,
             label: 'Email',
           ),
@@ -46,7 +47,7 @@ class _ProfileTabState extends State<ProfileTab> {
           //Nome
           CustomTextField(
             readOnly: true,
-            initialValue: appData.user.name,
+            initialValue: authController.user.name,
             icon: Icons.person,
             label: 'Nome',
           ),
@@ -54,7 +55,7 @@ class _ProfileTabState extends State<ProfileTab> {
           //Celular
           CustomTextField(
             readOnly: true,
-            initialValue: appData.user.phone,
+            initialValue: authController.user.phone,
             icon: Icons.phone,
             label: 'Celular',
           ),
@@ -62,7 +63,7 @@ class _ProfileTabState extends State<ProfileTab> {
           //cpf
           CustomTextField(
             readOnly: true,
-            initialValue: appData.user.cpf,
+            initialValue: authController.user.cpf,
             icon: Icons.file_copy,
             label: 'CPF',
             isSecret: true,
@@ -92,6 +93,11 @@ class _ProfileTabState extends State<ProfileTab> {
   }
 
   Future<bool?> updatePassword() {
+    final newPasswordController = TextEditingController();
+
+    // final formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
+
     return showDialog(
       context: context,
       builder: (context) {
@@ -103,61 +109,81 @@ class _ProfileTabState extends State<ProfileTab> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Título
-                    const Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 12,
-                      ),
-                      child: Text(
-                        'Atualização de senha',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Título
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 12,
                         ),
-                      ),
-                    ),
-                    // Senha atual
-                    const CustomTextField(
-                      isSecret: true,
-                      icon: Icons.lock,
-                      label: 'Senha atual',
-                    ),
-                    // Nova Senha
-                    const CustomTextField(
-                      isSecret: true,
-                      icon: Icons.lock_outline,
-                      label: 'Nova senha',
-                    ),
-                    // Confirmação nova senha
-                    const CustomTextField(
-                      isSecret: true,
-                      icon: Icons.lock_outline,
-                      label: 'Confirmar nova senha',
-                    ),
-
-                    // Botão de confirmação
-                    SizedBox(
-                      height: 45,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                        child: Text(
+                          'Atualização de senha',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        onPressed: () {
-                          utilsServices.showToast(
-                            message: 'Senha atualizada com sucesso',
-                          );
-                        },
-                        child: const Text('Atualizar'),
                       ),
-                    ),
-                  ],
+                      // Senha atual
+                      const CustomTextField(
+                        isSecret: true,
+                        icon: Icons.lock,
+                        label: 'Senha atual',
+                        validator: passwordValidator,
+                      ),
+                      // Nova Senha
+                      CustomTextField(
+                        controller: newPasswordController,
+                        isSecret: true,
+                        icon: Icons.lock_outline,
+                        label: 'Nova senha',
+                        validator: passwordValidator,
+                      ),
+                      // Confirmação nova senha
+                      CustomTextField(
+                        isSecret: true,
+                        icon: Icons.lock_outline,
+                        label: 'Confirmar nova senha',
+                        validator: (password) {
+                          final result = passwordValidator(password);
+                          if (result != null) {
+                            dev.log('A senha não é válida');
+                            return result;
+                          }
+                          if (password != newPasswordController.text) {
+                            dev.log('As senhas não são iguais');
+                            return 'As senhas não são iguais.';
+                          }
+                          return null;
+                        },
+                      ),
+
+                      // Botão de confirmação
+                      SizedBox(
+                        height: 45,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          onPressed: () {
+                            // formKey.currentState!.validate();
+                            formKey.currentState!.validate();
+                            // utilsServices.showToast(
+                            //   message: 'Senha atualizada com sucesso',
+                            // );
+                          },
+                          child: const Text('Atualizar'),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               //
