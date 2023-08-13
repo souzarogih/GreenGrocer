@@ -22,7 +22,7 @@ class CartItemModel {
       _$CartItemModelFromJson(json);
   Map<String, dynamic> toJson() => _$CartItemModelToJson(this);
 
-  totalPrice() => item.price * quantity;
+  double totalPrice() => item.price * quantity;
 
   @override
   String toString() =>

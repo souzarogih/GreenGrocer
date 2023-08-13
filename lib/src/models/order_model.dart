@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:get/get.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:greengrocer/src/models/cart_item_model.dart';
@@ -10,6 +9,7 @@ part 'order_model.g.dart';
 class OrderModel {
   String id;
 
+  @JsonKey(name: 'createdAt')
   DateTime? createdDateTime;
 
   @JsonKey(name: 'due')
