@@ -100,3 +100,7 @@ Added
 [0.0.24] 2023-08-13
 Added
 #0028 | Funcionalidade para alterar a senha.
+
+[0.0.25] 2023-08-13
+Added
+#0029 | Desabilitando o uso horizontal do app no dispositivo.

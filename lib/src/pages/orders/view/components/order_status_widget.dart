@@ -88,7 +88,7 @@ class OrderStatusWidget extends StatelessWidget {
 }
 
 class _CustomDivider extends StatelessWidget {
-  const _CustomDivider({super.key});
+  const _CustomDivider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:greengrocer/src/constants/endpoints.dart';
 import 'package:greengrocer/src/models/user_model.dart';
 import 'package:greengrocer/src/pages/auth/repository/auth_errors.dart'
-    as authErrors;
+    as auth_errors;
 import 'package:greengrocer/src/pages/auth/result/auth_result.dart';
 import 'package:greengrocer/src/services/http_manager.dart';
 import 'dart:developer' as dev;
@@ -18,7 +18,7 @@ class AuthRepository {
       return AuthResult.success(user);
     } else {
       dev.log('Ocorreu um erro na autenticação!');
-      return AuthResult.error(authErrors.authErrorsString(result['error']));
+      return AuthResult.error(auth_errors.authErrorsString(result['error']));
     }
   }
 

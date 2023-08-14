@@ -82,7 +82,7 @@ class HomeController extends GetxController {
     }
 
     if (searchTitle.value.isEmpty) {
-      allCategories.remove(0);
+      allCategories.removeAt(0);
     } else {
       CategoryModel? c = allCategories.firstWhereOrNull((cat) => cat.id == '');
 
