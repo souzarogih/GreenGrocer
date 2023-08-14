@@ -96,3 +96,7 @@ Added
 Added
 #0026 | Exibindo mensagem de carrinho vazio quando não há itens.
 #0027 | Navegando o botão de carrinho para tela de carrinho.
+
+[0.0.24] 2023-08-13
+Added
+#0028 | Funcionalidade para alterar a senha.

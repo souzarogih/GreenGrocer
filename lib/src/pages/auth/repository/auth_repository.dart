@@ -33,7 +33,7 @@ class AuthRepository {
         method: HttpMethods.post,
         body: {
           'email': email,
-          'currentPAssword': currentPassword,
+          'currentPassword': currentPassword,
           'newPassword': newPassword,
         },
         headers: {
