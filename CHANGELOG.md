@@ -104,3 +104,7 @@ Added
 [0.0.25] 2023-08-13
 Added
 #0029 | Desabilitando o uso horizontal do app no dispositivo.
+
+[1.0.0] 2023-08-13
+Added
+#0030 | Configurando o android manifest para permitir a release do app usar a internet.

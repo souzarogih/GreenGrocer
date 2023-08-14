@@ -33,7 +33,12 @@ ou
 #### Limpar os dados gerados dos apps
 `$ flutter clean`
 
+#### Gerar um apk
+`$ flutter build apk`
 
+`$ flutter build apk --release`
+
+-Local: `build/app/outputs/flutter-apk/app-release.apk`
 
 
 ## Getting Started
